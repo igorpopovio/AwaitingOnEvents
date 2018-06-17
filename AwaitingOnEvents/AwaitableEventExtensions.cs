@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace AwaitingOnEvents
 {
@@ -22,6 +23,25 @@ namespace AwaitingOnEvents
             finally
             {
                 button.Click -= handler;
+            }
+        }
+
+        public static async Task MouseEnterAsync(this Label label)
+        {
+            var source = new TaskCompletionSource<object>();
+            MouseEventHandler handler = (sender, args) =>
+            {
+                source.TrySetResult("ignored");
+            };
+
+            try
+            {
+                label.MouseEnter += handler;
+                await source.Task;
+            }
+            finally
+            {
+                label.MouseEnter -= handler;
             }
         }
     }
