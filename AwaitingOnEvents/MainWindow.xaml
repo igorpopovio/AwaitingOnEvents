@@ -5,8 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AwaitingOnEvents"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="Awaiting on Events"
+        Width="400"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        SizeToContent="Height">
+    <StackPanel Margin="10">
+        <Button x:Name="FirstButton"
+                Content="First button"
+                Margin="0,0,0,10"
+                Height="40" />
+        <Button x:Name="SecondButton"
+                Content="Second button"
+                Margin="0,0,0,10"
+                Height="40" />
+        <Label x:Name="TheLabel"
+               Content="Press the buttons above then hover over this label to trigger &#xD;&#xA;the magic behavior"
+               Margin="0,0,0,10"
+               Height="60"
+               Background="#FF264F97"
+               Foreground="White"
+               FontWeight="Bold" />
+        <TextBlock x:Name="TheTextBlock"
+                   Text="Result"
+                   Margin="0,0,0,10"
+                   Height="40"
+                   HorizontalAlignment="Center"
+                   FontWeight="Bold"
+                   FontSize="16" />
+    </StackPanel>
 </Window>
