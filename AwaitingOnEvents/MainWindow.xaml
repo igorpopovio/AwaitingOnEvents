@@ -9,7 +9,8 @@
         Width="400"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
-        SizeToContent="Height">
+        SizeToContent="Height"
+        Loaded="Window_Loaded">
     <StackPanel Margin="10">
         <Button x:Name="FirstButton"
                 Content="First button"

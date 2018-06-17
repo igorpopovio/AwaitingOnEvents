@@ -8,16 +8,16 @@ namespace AwaitingOnEvents
     {
         public static async Task ClickAsync(this Button button)
         {
-            var tcs = new TaskCompletionSource<object>();
-            RoutedEventHandler handler = (s, e) =>
+            var source = new TaskCompletionSource<object>();
+            RoutedEventHandler handler = (sender, args) =>
             {
-                tcs.TrySetResult(null);
+                source.TrySetResult("ignored");
             };
 
             try
             {
                 button.Click += handler;
-                await tcs.Task;
+                await source.Task;
             }
             finally
             {
